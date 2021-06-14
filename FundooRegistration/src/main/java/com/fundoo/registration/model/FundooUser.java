@@ -55,4 +55,10 @@ public class FundooUser {
 		this.profilePicture = fundooUserDTO.profilePicture;
 		
 	}
+	
+	public FundooUser(FundooUserDTO fundooUserDTO) {
+		this.updateUser(fundooUserDTO);
+	}
+	
+	public FundooUser() {}
 }

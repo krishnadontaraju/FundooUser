@@ -1,6 +1,6 @@
 package com.fundoo.registration.controller;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -62,6 +62,25 @@ public class FundooRegistrationController {
 		
 		return new ResponseEntity<ResponseDTO>(verifyUserResponse , HttpStatus.OK);
 		
+	}
+	
+	@GetMapping("/checkUser/{userId}")
+	public boolean checkForThePresenceOfUser(@PathVariable long userId) {
+	
+		return fundooUserService.checkUser(userId);
+		
+	}
+	
+	@GetMapping("/checkEmailId/{emailId}")
+	public boolean checkIfEmailIdIsPresentOrNot(@PathVariable String emailId) {
+		
+		return fundooUserService.checkIfEmailIsPresent(emailId);
+	}
+	
+	@GetMapping("/getUserWithEmailId/{emailId}")
+	public Long checkIfEmailIdIsPresentOrNotAndReturnUser(@PathVariable String emailId) {
+		
+		return fundooUserService.checkIfUserPresentThenReturnUser(emailId);
 	}
 	
 }
