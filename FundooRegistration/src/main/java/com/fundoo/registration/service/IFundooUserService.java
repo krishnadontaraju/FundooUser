@@ -1,11 +1,8 @@
 package com.fundoo.registration.service;
 
-import java.util.Optional;
-
 import com.fundoo.registration.dto.FundooUserDTO;
 import com.fundoo.registration.dto.ResponseDTO;
 import com.fundoo.registration.exception.FundooUserException;
-import com.fundoo.registration.model.FundooUser;
 
 public interface IFundooUserService {
 
@@ -13,9 +10,9 @@ public interface IFundooUserService {
 
 	ResponseDTO registerUser(FundooUserDTO userDTO) throws FundooUserException;
 
-	ResponseDTO updateEmployeePayRollData(long userID, FundooUserDTO userDTO) throws FundooUserException;
+	ResponseDTO updateUser(long userID, FundooUserDTO userDTO) throws FundooUserException;
 
-	ResponseDTO deleteEmployeePayRollData(long userID) throws FundooUserException;
+	ResponseDTO deleteUser(long userID) throws FundooUserException;
 
 	ResponseDTO verifyUser(String token) throws FundooUserException;
 
